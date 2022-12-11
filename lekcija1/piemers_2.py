@@ -31,7 +31,7 @@ atrasts = lapas[2]["Datums2"] == "2020-09-09"
 print(lapas[2][atrasts])
 
 lapas_nr = 1
-with pandas.ExcelWriter("jauns_fails.xlsx") as fails:
+with pandas.ExcelWriter("jauns_fails2.xlsx") as fails:
     for lapa in lapas:
         lapa.to_excel(fails, sheet_name=str(lapas_nr), index=False)
         lapas_nr +=1
