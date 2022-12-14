@@ -5,7 +5,7 @@ for lapa in fails.sheet_names:
     lapas.append(fails.parse(lapa))
 """ print(lapas[0].shape)
 print(lapas[0]["Nosaukums"])  """
-#lapas[0]["Cena"] = lapas[0]["Pašizmaksa"]* 1.21
+lapas[0]["Cena"] = lapas[0]["Pašizmaksa"]* 1.21
 #print(lapas[0]["Cena"])
 
 ieliekama_rinda = lapas[0][["Skaits","Cena"]].sum()
