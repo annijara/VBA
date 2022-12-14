@@ -11,13 +11,16 @@ kopā = lapas[0][["Skaits","Cena"]].sum()
 
 peļņa = kopā - (lapas[0]["Pašizmaksa"]*lapas[0]["Skaits"]* 1.21)
 
-d = (kopā, peļņa)
+#d = (kopā, peļņa)
 
-parvietota_rinda = pandas.DataFrame(data = d).T
+parvietota_rinda = pandas.DataFrame(data = kopā).T
 parvietota_rinda = parvietota_rinda.reindex(columns=lapas[0].columns)
 print(parvietota_rinda)
-""" lapas_nr = 1
+
+
+
+lapas_nr = 1
 with pandas.ExcelWriter("rezult.xlsx") as fails:
     for lapa in lapas:
         lapa.to_excel(fails, sheet_name= str(lapas_nr), index=False)
-        lapas_nr += 1 """
+        lapas_nr += 1
