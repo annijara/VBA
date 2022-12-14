@@ -3,18 +3,23 @@ fails = pandas.ExcelFile("dati_masiviem.xlsx")
 lapas = []
 for lapa in fails.sheet_names:
     lapas.append(fails.parse(lapa))
- 
+    
+# 1.uzdevums 
 lapas[0]["Cena"] = lapas[0]["Pašizmaksa"] * 1.31
 cena = lapas[0]["Cena"]
-
 lapas[0]["Kopā"] = lapas[0]["Skaits"] * lapas[0]["Cena"]
 kopā = lapas[0]["Kopā"]
-
 lapas[0]["Peļņa"] = kopā - (lapas[0]["Pašizmaksa"]*lapas[0]["Skaits"]* 1.21)
 peļņa = lapas[0]["Peļņa"]
 
-#d = (kopā, peļņa)
-
+#2.uzdevums
+ieliekama_rinda = lapas[0][["Skaits","Cena"]].sum()
+parvietota_rinda = pandas.DataFrame(data = ieliekama_rinda).T
+parvietota_rinda = parvietota_rinda.reindex(columns=lapas[0].columns)
+lapas.append(lapas[0])
+lapas[1] = lapas[1].append(parvietota_rinda)
+#print(lapas[1])
+#lapas[1]["Skaits"] = 
 """ parvietota_rinda = pandas.DataFrame(data = kopā).T
 parvietota_rinda = parvietota_rinda.reindex(columns=lapas[0].columns)
 print(parvietota_rinda) """
