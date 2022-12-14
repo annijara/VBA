@@ -7,10 +7,11 @@ for lapa in fails.sheet_names:
 lapas[0]["Cena"] = lapas[0]["Pašizmaksa"] * 1.31
 cena = lapas[0]["Cena"]
 
-lapas[0]["Kopā"] = lapas[0][["Skaits","Cena"]].sum()
+lapas[0]["Kopā"] = lapas[0]["Skaits"] * lapas[0]["Cena"]
 kopā = lapas[0]["Kopā"]
 
-peļņa = kopā - (lapas[0]["Pašizmaksa"]*lapas[0]["Skaits"]* 1.21)
+lapas[0]["Peļņa"] = kopā - (lapas[0]["Pašizmaksa"]*lapas[0]["Skaits"]* 1.21)
+peļņa = lapas[0]["Peļņa"]
 
 #d = (kopā, peļņa)
 
