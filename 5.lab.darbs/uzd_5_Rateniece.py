@@ -7,7 +7,7 @@ for lapa in fails.sheet_names:
 lapas[0]["Cena"] = lapas[0]["Pašizmaksa"] * 1.31
 cena = lapas[0]["Cena"]
 
-kopā = lapas[0][["Skaits","Cena"]].sum()
+lapas[0]["Kopā"] = lapas[0][["Skaits","Cena"]].sum()
 kopā = lapas[0]["Kopā"]
 
 peļņa = kopā - (lapas[0]["Pašizmaksa"]*lapas[0]["Skaits"]* 1.21)
