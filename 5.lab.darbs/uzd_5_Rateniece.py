@@ -13,7 +13,7 @@ lapas[0]["Peļņa"] = kopā - (lapas[0]["Pašizmaksa"]*lapas[0]["Skaits"]* 1.21)
 peļņa = lapas[0]["Peļņa"]
 
 #2.uzdevums
-ieliekama_rinda = lapas[0][["Skaits","Cena"]].sum()
+ieliekama_rinda = lapas[0][["Skaits","Cena", "Pašizmaksa", "Peļņa", "Kopā"]].sum()
 parvietota_rinda = pandas.DataFrame(data = ieliekama_rinda).T
 parvietota_rinda = parvietota_rinda.reindex(columns=lapas[0].columns)
 lapas.append(lapas[0])
