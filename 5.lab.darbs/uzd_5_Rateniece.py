@@ -17,12 +17,13 @@ ieliekama_rinda = lapas[0][["Skaits","Cena", "Pašizmaksa", "Peļņa", "Kopā"]]
 parvietota_rinda = pandas.DataFrame(data = ieliekama_rinda).T
 parvietota_rinda = parvietota_rinda.reindex(columns=lapas[0].columns)
 lapas.append(lapas[0])
-lapas[1] = lapas[1].append(parvietota_rinda)
-#print(lapas[1])
-#lapas[1]["Skaits"] = 
-""" parvietota_rinda = pandas.DataFrame(data = kopā).T
-parvietota_rinda = parvietota_rinda.reindex(columns=lapas[0].columns)
-print(parvietota_rinda) """
+lapas[1] = lapas[1].append(parvietota_rinda) 
+
+#3.uzdevums
+dati = pandas.read_excel(fails)
+datumi = dati['Datums'].value_counts()
+#print(dati['Datums'].value_counts())
+lapas[2] = lapas[2].append(datumi)
 
 
 
