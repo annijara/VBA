@@ -20,12 +20,15 @@ lapas.append(lapas[0])
 lapas[1] = lapas[1].append(parvietota_rinda) 
 
 #3.uzdevums
+""" #lapas.append()
 dati = pandas.read_excel(fails)
 datumi = dati['Datums'].value_counts()
 #print(dati['Datums'].value_counts())
-lapas[2] = lapas[2].append(datumi)
+lapas[2] = lapas[2].append(datumi) """
 
-
+grupetie_dati = lapas[0]['Datums']
+lapas.append(grupetie_dati)
+#print (grupetie_dati)
 
 lapas_nr = 1
 with pandas.ExcelWriter("rezult.xlsx") as fails:
