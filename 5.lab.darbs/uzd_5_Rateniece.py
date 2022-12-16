@@ -27,7 +27,8 @@ datumi = dati['Datums'].value_counts()
 lapas[2] = lapas[2].append(datumi) """
 
 grupetie_dati = lapas[0]['Datums']
-lapas.append(grupetie_dati)
+datumi = grupetie_dati.value_counts()
+lapas.append(datumi)
 #print (grupetie_dati)
 
 lapas_nr = 1
