@@ -1,4 +1,5 @@
 import pandas
+import pandas as pd
 fails = pandas.ExcelFile("dati_masiviem.xlsx")
 lapas = []
 for lapa in fails.sheet_names:
@@ -39,9 +40,9 @@ lapas.append(df)
  
 #4.uzdevums
 
-datii = lapas[0]["Datums"]
-lapas.append(datii)
-lapas[3]["Datums"] = (lapas[1]["Datums"] == "07.10.2020  0:00:00")
+lapas.append(lapas[0])
+
+lapas[3]['Datums'] = pd.to_datetime(lapas[3]['Datums'], format='%Y-%m-%d')
 """ if atrast == "True":
     print (atrast) """
 
