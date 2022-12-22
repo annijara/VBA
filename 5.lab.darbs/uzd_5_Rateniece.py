@@ -45,7 +45,6 @@ lapas.append(lapas[0])
 lapas[3]['Datums'] = pd.to_datetime(lapas[3]['Datums'], format='%Y-%m-%d')
 df = lapas[3]['Datums'] 
 filtered_df = df.loc[(df == '2020-10-07')]
-print(filtered_df)
 """ if atrast == "True":
     print (atrast) """
 
