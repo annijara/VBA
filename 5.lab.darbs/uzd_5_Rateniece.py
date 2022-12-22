@@ -22,10 +22,13 @@ lapas[1] = lapas[1].append(parvietota_rinda)
 
 #3.uzdevums
 lapas.append(lapas[0]["Datums"])
-
+k = lapas[2]
+d = k.unique()
+lapas[2] = k.append(d)
+print (d)
 #df2 = pd.unique(lapas[0][['Datums']].values.ravel())
 """ df = lapas[0]["Datums"]
-k = df.unique()
+
 lapas.append(k) """
 #df['species'].nunique()
 """ grupetie_dati = lapas[0]["Datums"]
@@ -50,31 +53,15 @@ lapas.append(df)
 #4.uzdevums
 
 lapas.append(lapas[0])
-
 atrasts = lapas[3]['Datums'] == '2020-10-07'
-
 lapas[3] = lapas[3][atrasts]
 ieliekama_rinda = lapas[3][["Skaits"]].sum()
 parvietota_rinda = pandas.DataFrame(data = ieliekama_rinda).T
 parvietota_rinda = parvietota_rinda.reindex(columns=lapas[3].columns)
 lapas[3] = lapas[3].append(parvietota_rinda) 
 
-""" df = lapas[0]
-df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
-filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
-lapas.append(filtered_df) """
 
 
-
-""" if atrast == "True":
-    print (atrast) """
-
-""" k= lapas[0][lapas[0].Datums != "07.10.2020  0:00:00"] 
-lapas.append(k)
-print(k) """
-""" if lapas[0]["Datums"] == "07.10.2020  0:00:00":
-    lapas.append(lapas[0]) """ 
- 
 lapas_nr = 1
 with pandas.ExcelWriter("rezult.xlsx") as fails:
     for lapa in lapas:
