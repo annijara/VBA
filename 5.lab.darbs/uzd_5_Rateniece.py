@@ -40,11 +40,19 @@ lapas.append(df)
  
 #4.uzdevums
 
-
 df = lapas[0]
 df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
 filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
-lapas.append(filtered_df)
+df["Datums"] = filtered_df
+lapas.append(df)
+
+""" df = lapas[0]
+df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
+filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
+lapas.append(filtered_df) """
+
+
+
 """ if atrast == "True":
     print (atrast) """
 
