@@ -37,11 +37,16 @@ lapas.append(df)
 #print (grupetie_dati)
  """
  
-#4.uzdevums 
-if lapas[0]["Datums"] == "07.10.2020":
-    lapas.append(lapas[0])
+#4.uzdevums
+atrast = (lapas[0]["Datums"] == "07.10.2020  0:00:00")
+""" if atrast == "True":
+    print (atrast) """
 
-
+""" k= lapas[0][lapas[0].Datums != "07.10.2020  0:00:00"] 
+lapas.append(k)
+print(k) """
+""" if lapas[0]["Datums"] == "07.10.2020  0:00:00":
+    lapas.append(lapas[0]) """ 
  
 lapas_nr = 1
 with pandas.ExcelWriter("rezult.xlsx") as fails:
