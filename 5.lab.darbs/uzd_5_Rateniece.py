@@ -21,11 +21,13 @@ lapas.append(lapas[0])
 lapas[1] = lapas[1].append(parvietota_rinda) 
 
 #3.uzdevums
+lapas.append(lapas[0]["Datums"])
 
 #df2 = pd.unique(lapas[0][['Datums']].values.ravel())
-df = lapas[0]["Datums"]
+""" df = lapas[0]["Datums"]
 k = df.unique()
-lapas.append(k)
+lapas.append(k) """
+#df['species'].nunique()
 """ grupetie_dati = lapas[0]["Datums"]
 df = _FileRead.readFile("dati_masiviem.xlsx")
 
@@ -46,12 +48,13 @@ lapas.append(df)
  """
  
 #4.uzdevums
-
-
-df = lapas[0]
+lapas.append(lapas[0])
+atrasts = lapas[3]['Datums'] == '2020-10-07'
+lapas[3] = lapas[3][atrasts]
+""" df = lapas[0]
 df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
 filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
-lapas.append(filtered_df)
+lapas.append(filtered_df) """
 
 
 
