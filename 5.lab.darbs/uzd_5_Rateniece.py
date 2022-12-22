@@ -21,11 +21,9 @@ lapas.append(lapas[0])
 lapas[1] = lapas[1].append(parvietota_rinda) 
 
 #3.uzdevums
-lapas.append(lapas[0]["Datums"])
-k = lapas[2]
-d = k.unique()
-lapas[2] = k.append(d)
-print (d)
+
+k = lapas[0]["Datums"].unique()
+lapas.append(lapas[0][k])
 #df2 = pd.unique(lapas[0][['Datums']].values.ravel())
 """ df = lapas[0]["Datums"]
 
