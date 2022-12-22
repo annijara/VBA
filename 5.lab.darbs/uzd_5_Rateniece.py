@@ -22,32 +22,11 @@ lapas[1] = lapas[1].append(parvietota_rinda)
 
 #3.uzdevums
 
-k = lapas[0]["Datums"].unique()
-lapas.append(lapas[0][k])
-#df2 = pd.unique(lapas[0][['Datums']].values.ravel())
-""" df = lapas[0]["Datums"]
+unikali_datumi = lapas[0][["Datums", "Skaits"]].groupby("Datums").count()
+unikali_datumi.insert(0, "Datums", unikali_datumi.index)
 
-lapas.append(k) """
-#df['species'].nunique()
-""" grupetie_dati = lapas[0]["Datums"]
-df = _FileRead.readFile("dati_masiviem.xlsx")
-
-unique = df.drop_duplicates('Datums')
-lapas.append(unique) """
-""" #lapas.append()
-
-datumi = dati['Datums'].value_counts()
-#print(dati['Datums'].value_counts())
-lapas[2] = lapas[2].append(datumi) """
-""" dati = pandas.read_excel(fails)
-
-df = dati.groupby("Datums").nunique()
-#
-#lapas[2]["Skaits"] = df
-lapas.append(df)
-#print (grupetie_dati)
- """
- 
+print (unikali_datumi)
+lapas.append(unikali_datumi)
 #4.uzdevums
 
 lapas.append(lapas[0])
