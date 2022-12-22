@@ -41,7 +41,7 @@ lapas.append(df)
 #4.uzdevums
 
 
-df = lapas[0]['Datums'] 
+df = lapas[0]
 df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
 
 filtered_df = df.loc[(df == '2020-10-07')]
