@@ -1,3 +1,4 @@
+from xml.etree.ElementTree import _FileRead
 import pandas
 import pandas as pd
 fails = pandas.ExcelFile("dati_masiviem.xlsx")
@@ -23,7 +24,10 @@ lapas[1] = lapas[1].append(parvietota_rinda)
 #3.uzdevums
 
 grupetie_dati = lapas[0]["Datums"]
-lapas.append(grupetie_dati)
+df = _FileRead.readFile("dati_masiviem.xlsx")
+
+unique = df.drop_duplicates('Datums')
+lapas.append(unique)
 """ #lapas.append()
 
 datumi = dati['Datums'].value_counts()
@@ -40,16 +44,11 @@ lapas.append(df)
  
 #4.uzdevums
 
+
 df = lapas[0]
 df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
 filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
-df["Datums"] = filtered_df
-lapas.append(df)
-
-""" df = lapas[0]
-df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
-filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
-lapas.append(filtered_df) """
+lapas.append(filtered_df)
 
 
 
