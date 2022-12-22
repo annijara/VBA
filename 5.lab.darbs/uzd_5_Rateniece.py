@@ -38,9 +38,10 @@ lapas.append(df)
  """
  
 #4.uzdevums
-atrast = (lapas[0]["Datums"] == "07.10.2020  0:00:00")
-grupetie_dati = lapas[0]["Datums"]
-lapas.append(grupetie_dati)
+
+datii = lapas[0]["Datums"]
+lapas.append(datii)
+lapas[3]["Datums"] = (lapas[1]["Datums"] == "07.10.2020  0:00:00")
 """ if atrast == "True":
     print (atrast) """
 
