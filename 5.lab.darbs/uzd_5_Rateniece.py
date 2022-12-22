@@ -48,9 +48,17 @@ lapas.append(df)
  """
  
 #4.uzdevums
+
 lapas.append(lapas[0])
+
 atrasts = lapas[3]['Datums'] == '2020-10-07'
+
 lapas[3] = lapas[3][atrasts]
+ieliekama_rinda = lapas[3][["Skaits"]].sum()
+parvietota_rinda = pandas.DataFrame(data = ieliekama_rinda).T
+parvietota_rinda = parvietota_rinda.reindex(columns=lapas[3].columns)
+lapas[3] = lapas[3].append(parvietota_rinda) 
+
 """ df = lapas[0]
 df = pd.to_datetime(lapas[0]['Datums'], format='%Y-%m-%d')
 filtered_df = df.loc[(lapas[0]['Datums'] == '2020-10-07')]
